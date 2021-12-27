@@ -10,7 +10,7 @@ spec:
     namespace: default
   project: default
   source:
-    path: apps/
+    path: app/
     repoURL: https://github.com/kimkimhun/argocd-app-of-app.git
     targetRevision: main
   syncPolicy:
