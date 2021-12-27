@@ -12,7 +12,7 @@ spec:
     path: config/kube-rbac/base-devops
   destination:
     name: https://kubernetes.default.svc
-    namespace: devops
+    namespace: default
   syncPolicy:
     automated:
       selfHeal: true

@@ -12,7 +12,7 @@ spec:
     path: config/kube-state-metrics/prd
   destination:
     name: https://kubernetes.default.svc
-    namespace: production
+    namespace: default
   syncPolicy:
     automated:
       selfHeal: true
