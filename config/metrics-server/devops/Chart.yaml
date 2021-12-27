@@ -1,0 +1,9 @@
+apiVersion: v2
+name: metrics-server
+version: 3.5.0
+appVersion: 0.5.0
+description: Metrics Server is a scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines.
+dependencies:
+  - name: metrics-server
+    version: 3.5.0
+    repository: "https://kubernetes-sigs.github.io/metrics-server/"

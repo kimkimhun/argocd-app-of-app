@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metrics-server-devops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/kimkimhun/argocd-app-of-app.git
+    targetRevision: master
+    path: config/metrics-server/devops
+  destination:
+    name: https://kubernetes.default.svc
+    namespace: devops
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
