@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-rbac-devops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/kimkimhun/argocd-app-of-app.git
+    targetRevision: main
+    path: config/kube-rbac/base-devops
+  destination:
+    name: https://kubernetes.default.svc
+    namespace: devops
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
